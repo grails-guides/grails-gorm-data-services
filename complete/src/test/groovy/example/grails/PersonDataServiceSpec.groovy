@@ -1,3 +1,4 @@
+// tag::PersonDataServiceSpec[]
 package example.grails
 
 import grails.test.hibernate.HibernateSpec
@@ -21,7 +22,9 @@ class PersonDataServiceSpec extends HibernateSpec {
         person.name == "Nirav"
         person.age == 39
     }
+// end::PersonDataServiceSpec[]
 
+    // tag::test1[]
     void "test find persons age projection"() {
         when:
 
@@ -30,7 +33,9 @@ class PersonDataServiceSpec extends HibernateSpec {
         then:
         age == 39
     }
+    // end::test1[]
 
+    // tag::test2[]
     void "test save person"() {
         when:
         Person newPerson = new Person(name: "Bob", age: 22)
@@ -40,7 +45,9 @@ class PersonDataServiceSpec extends HibernateSpec {
         person.name == "Bob"
         person.age == 22
     }
+    // end::test2[]
 
+    // tag::test3[]
     void "test save person with address"() {
         when:
         Person newPerson = new Person(name: "Bob", age: 22)
@@ -54,4 +61,5 @@ class PersonDataServiceSpec extends HibernateSpec {
         person.addresses[0].city == "Fort Worth"
         person.addresses[0].state == "TX"
     }
+    // end::test3[]
 }

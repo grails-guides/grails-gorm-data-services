@@ -33,4 +33,6 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
+// tag::hqlLogger[]
 logger 'org.hibernate.SQL', TRACE, ['STDOUT']
+// end::hqlLogger[]
