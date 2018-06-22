@@ -1,4 +1,4 @@
-package grails.gorm.data.services
+package example.grails
 
 class BootStrap {
 
