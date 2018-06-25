@@ -6,7 +6,20 @@ gettingStarted:
   howto: How to complete the guide
 writingTheApp:
   title: Writing the Application
+  domainObjects: Domain Objects
+whyGormDataServices:
+  title: Why GORM Data Services
+usingGormDataServices:
+  title: Using GORM Data Services
+  dynamicFinders: Dynamic Finders
+  saveOperation: Save Operation
+  joinQuery: Join Query
+abstractClassSupport:
+  title: Abstract Class Support
+  hqlQuery: HQL Query
+  businessLogic: Business Logic
 runningTheApp:
-  title: Running the Application
+    title: Running the Application
+conclusion: Conclusion
 helpWithGrails:
     title: Help with Grails
