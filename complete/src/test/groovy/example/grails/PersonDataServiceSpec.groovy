@@ -27,7 +27,6 @@ class PersonDataServiceSpec extends HibernateSpec {
     // tag::test1[]
     void "test find persons age projection"() {
         when:
-
         Integer age = personDataService.findPersonAge("Nirav")
 
         then:

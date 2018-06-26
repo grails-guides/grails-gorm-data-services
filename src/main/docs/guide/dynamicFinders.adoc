@@ -20,7 +20,7 @@ include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceSpec.groovy
 
 Implement a finder that uses a projection of a property. This has the advantage of bringing back only one column instead of the
 whole object.  Note that in `findPersonAge`, the pattern is `<StemMethod><DomainObject><Property>`, where `<Property>` is `Age`.
-The return type restricts the select clause to one column.
+The return type `Integer` restricts the select clause to one column.
 
 [source, groovy]
 .grails-app/services/example/grails/PersonDataService.groovy
