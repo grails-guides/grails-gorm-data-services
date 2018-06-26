@@ -1,0 +1,37 @@
+Let's implement a Data Service with dynamic finders. We can find a `Person` by name.  Notice that all is required is to implement
+the interface and GORM does the rest.  In the method `findByName`, the stem is `find` which tells GORM its a query, and `Name`
+matches the domain property.
+
+[source, groovy]
+.grails-app/services/example/grails/PersonDataService.groovy
+----
+include::{sourceDir}/grails-app/services/example/grails/PersonDataService.groovy[tag=PersonDataServiceBegin]
+}
+----
+
+The Data Service is easily tested with `HibernateSpec`. Note we need to use `hibernateDatastore` to retrieve the implemented service.
+
+[source, groovy]
+.src/test/groovy/example/grails/PersonDataServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceSpec.groovy[tag=PersonDataServiceSpec]
+}
+----
+
+Implement a finder that uses a projection of a property. This has the advantage of bringing back only one column instead of the
+whole object.  Note that in `findPersonAge`, the pattern is `<StemMethod><DomainObject><Property>`, where `<Property>` is `Age`.
+The return type restricts the select clause to one column.
+
+[source, groovy]
+.grails-app/services/example/grails/PersonDataService.groovy
+----
+include::{sourceDir}/grails-app/services/example/grails/PersonDataService.groovy[tag=findPersonAge]
+----
+
+Add to the unit test to verify correctness.
+
+[source, groovy]
+.src/test/groovy/example/grails/PersonDataServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceSpec.groovy[tag=test1]
+----
