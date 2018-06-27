@@ -1,4 +1,3 @@
-// tag::PersonLocationServiceBegin[]
 package example.grails
 
 import grails.gorm.services.Query
@@ -6,19 +5,16 @@ import grails.gorm.services.Service
 
 @Service(Person)
 abstract class PersonLocationService {
-    @Query("""
+    @Query(""" // <1>
     select distinct ${person}
-    from ${Person person} join ${person.addresses} a
+    from ${Person person} join ${person.addresses} a // <2>
     where a.state = $state
     """)
-    protected abstract List<Person> searchByState(String state)
-// end::PersonLocationServiceBegin[]
+    protected abstract List<Person> searchByState(String state) // <3>
 
-    // tag::getAverageAgeOfPersonsInState[]
-    BigDecimal getAverageAgeOfPersonsInState(String state) {
-        List<Person> persons = searchByState("TX")
+    BigDecimal getAverageAgeOfPersonsInState(String state) { // <4>
+        List<Person> persons = searchByState("TX") // <5>
         List<Integer> ages = persons.collect { it.age }
         ages.sum() / ages.size()
     }
-    // end::getAverageAgeOfPersonsInState[]
 }

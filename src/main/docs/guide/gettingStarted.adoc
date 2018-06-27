@@ -1,5 +1,5 @@
 In this guide we are going to do a deep dive into GORM Data Services. Introduced in GORM 6.1, GORM Data Services auto generates
-a Data Service Layer which results in less code to write, compile time optimization, and easy mocking for testing.  This guide will
+a Data Service Layer which results in less code to write, compile time optimization, and ease of testing.  This guide will
 go into detail on how to create and use GORM Data Services with a sample Grails application.  The guide will stay focused on the
 service layer of the app consistent with persistence.
 

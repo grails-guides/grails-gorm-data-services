@@ -1,0 +1,4 @@
+GORM Data Service has support for Abstract Classes as well. This is convenient for situations where you want to define business
+logic and GORM implements the data layer.  All public methods will be automatically wrapped in appropriate transaction handling.
+Therefore you can compose logic with Data Services in an abstract class.
+

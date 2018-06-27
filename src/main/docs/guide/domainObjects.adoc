@@ -1,4 +1,4 @@
-Create `Person` and `Address` domain classes.
+Create the `Person` and `Address` domain classes.
 
 [source, groovy]
 .grails-app/domain/example/grails/Person.groovy

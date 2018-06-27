@@ -1,0 +1,3 @@
+GORM Data Services is a time saver. Allow GORM to implement the methods for you and manage transactions, while you simply
+define the interface. Data Services can reduce errors, performance issues and are testable.  Plus it has a high COOL factor!
+Enjoy and best of luck!

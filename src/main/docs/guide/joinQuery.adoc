@@ -13,7 +13,7 @@ include::{sourceDir}/grails-app/services/example/grails/PersonDataService.groovy
 This time around create an integration test. Inject the Data Service.
 
 [source, groovy]
-.src/test/groovy/example/grails/PersonDataServiceSpec.groovy
+.src/integration-test/groovy/example/grails/PersonDataServiceIntSpec.groovy
 ----
 include::{sourceDir}/src/integration-test/groovy/example/grails/PersonDataServiceIntSpec.groovy[]
 ----
