@@ -32,5 +32,4 @@ class BootStrap {
         }
         println "******* End bootstrap init() ***************"
     }
-
 }
