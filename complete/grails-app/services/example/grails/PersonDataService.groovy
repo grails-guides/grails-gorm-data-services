@@ -13,12 +13,12 @@ interface PersonDataService {
     Integer findPersonAge(String name)
     // end::findPersonAge[]
 
+    // tag::savePerson[]
+    Person savePerson(Person person)
+    // end::savePerson[]
+
     // tag::findEagerly[]
     @Join('addresses')
     Person findEagerly(String name)
     // end::findEagerly[]
-
-    // tag::savePerson[]
-    Person savePerson(Person person)
-    // end::savePerson[]
 }

@@ -17,7 +17,6 @@ usingGormDataServices:
 abstractClassSupport:
   title: Abstract Class Support
   hqlQuery: HQL Query
-  businessLogic: Business Logic
 runningTheApp:
     title: Running the Application
 conclusion: Conclusion

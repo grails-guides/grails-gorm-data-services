@@ -1,0 +1,34 @@
+Data Services can also implement a join query using the `grails.gorm.services.Join` annotation.  For  a one to many relationship, loading
+of the many side can cause https://dzone.com/articles/hibernate-gorm-solving-the-n1-problem[n + 1] problems resulting in
+many select statements.  This can severely hinder performance.
+
+Essentially we can perform an eager load with `@Join`. Apply this to concept to a query on `Person` and `Address`.
+
+[source, groovy]
+.grails-app/services/example/grails/PersonDataService.groovy
+----
+include::{sourceDir}/grails-app/services/example/grails/PersonDataService.groovy[tag=findEagerly]
+----
+
+This time around create an integration test. Inject the Data Service.
+
+[source, groovy]
+.src/test/groovy/example/grails/PersonDataServiceSpec.groovy
+----
+include::{sourceDir}/src/integration-test/groovy/example/grails/PersonDataServiceIntSpec.groovy[]
+----
+
+Note the outputted SQL log statement which demonstrates a join has been issued. Below is a sample.
+
+[source, bash]
+.log output
+----
+2018-06-27 12:52:19.835 DEBUG --- [    Test worker] org.hibernate.SQL:
+select this_.id as id1_1_1_, this_.version as version2_1_1_, this_.age as age3_1_1_, this_.name as name4_1_1_,
+    addresses2_.person_addresses_id as person_a1_2_3_, address3_.id as address_2_2_3_, addresses2_.addresses_idx as addresse3_3_,
+    address3_.id as id1_0_0_, address3_.version as version2_0_0_, address3_.street_name as street_n3_0_0_, address3_.city as city4_0_0_,
+    address3_.state as state5_0_0_
+from person this_ left outer join person_address addresses2_ on this_.id=addresses2_.person_addresses_id
+    left outer join address address3_ on addresses2_.address_id=address3_.id
+where this_.name=?
+----

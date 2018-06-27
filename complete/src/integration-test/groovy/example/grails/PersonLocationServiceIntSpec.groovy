@@ -1,4 +1,3 @@
-// tag::PersonLocationServiceIntSpecBegin[]
 package example.grails
 
 import grails.testing.mixin.integration.Integration
@@ -27,9 +26,7 @@ class PersonLocationServiceIntSpec extends Specification  {
         single.size() == 1
         single.find { it.name == "Sergio"}
     }
-// end::PersonLocationServiceIntSpecBegin[]
 
-    // tag::testAvgPersonInAState[]
     void "test avg age for persons in a state"() {
         when:
         BigDecimal avgAge = personLocationService.getAverageAgeOfPersonsInState("TX")
@@ -37,5 +34,4 @@ class PersonLocationServiceIntSpec extends Specification  {
         then:
         avgAge == 44.5
     }
-    // end::testAvgPersonInAState[]
 }
