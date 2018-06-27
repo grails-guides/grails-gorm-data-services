@@ -1,5 +1,5 @@
-Let's implement a Data Service with dynamic finders. We can find a `Person` by name.  Notice that all is required is to implement
-the interface and GORM does the rest.  In the method `findByName`, the stem is `find` which tells GORM its a query, and `Name`
+Let's implement a Data Service with dynamic finders. We can find a `Person` by name.  Notice that it is only required to define
+the interface method and GORM does the rest.  In the method `findByName`, the stem is `find` which tells GORM it's a query, and `Name`
 matches the domain property.
 
 [source, groovy]

@@ -20,10 +20,10 @@ Add to the `BootStrap.groovy` to insert sample data into the H2 in-memory databa
 include::{sourceDir}/grails-app/init/example/grails/BootStrap.groovy[]
 ----
 
-In order to observe how the Data Service operations translate into SQL statements, we will adjust the logger configuration. Also
-notice that we have placed `println` statements to differentiate insert statements in the `BootStrap.groovy`.
+In order to observe how Data Service operations translate into SQL statements, we will adjust the logger configuration. Also
+notice that we have placed `println` statements in `BootStrap.groovy` to differentiate the log output.
 
-In the `logback.groovy` remove the line `root(ERROR, ['STDOUT'])` and replace it with below
+In the `logback.groovy` remove the line `root(ERROR, ['STDOUT'])` and replace it with below:
 
 [source, groovy]
 .grails-app/conf/logback.groovy
