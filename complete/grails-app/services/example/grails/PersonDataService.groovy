@@ -20,5 +20,5 @@ interface PersonDataService {
 
     // tag::savePerson[]
     Person savePerson(Person person)
-    // end::findEagerly[]
+    // end::savePerson[]
 }

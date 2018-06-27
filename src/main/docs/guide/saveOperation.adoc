@@ -1,0 +1,18 @@
+Data Services can perform write operations as well. Simply accept the whole object as a parem with a `save` method on the interface.
+
+[source, groovy]
+.grails-app/services/example/grails/PersonDataService.groovy
+----
+include::{sourceDir}/grails-app/services/example/grails/PersonDataService.groovy[tag=savePerson]
+----
+
+Add to the unit test to verify correctness.
+
+[source, groovy]
+.src/test/groovy/example/grails/PersonDataServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceSpec.groovy[tag=test2]
+include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceSpec.groovy[tag=test3]
+----
+
+TIP: Run all the tests to make sure they pass -> `gradlew check`.
