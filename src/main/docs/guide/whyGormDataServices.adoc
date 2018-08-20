@@ -1,6 +1,6 @@
 Automatic implementation of an interface or an abstract class reduces the amount of code written.  In
 addition, GORM Data Services define transaction boundary semantics automatically.  For example, all public methods are
-marked with `@Transaction` (and read-only for query methods).
+marked with `@Transactional` (and read-only for query methods).
 
 === Advantages of Data Services
 
