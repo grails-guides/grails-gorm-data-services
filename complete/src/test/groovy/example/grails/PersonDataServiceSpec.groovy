@@ -10,7 +10,7 @@ class PersonDataServiceSpec extends HibernateSpec {
     PersonDataService personDataService
 
     def setup() {
-        personDataService = this.hibernateDatastore.getService(PersonDataService)
+        personDataService = hibernateDatastore.getService(PersonDataService)
     }
 
     void "test find person by name"() {

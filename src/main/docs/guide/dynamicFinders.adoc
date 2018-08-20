@@ -12,7 +12,7 @@ without the disadvantages. E.g. you get type safety since GORM Data services are
 To find a `Person` by name with a Dynamic finder you will use
 `Person.findByName`. Let's implement a Data Service to achieve the same query.
 
-Create an interface annoated with `import grails.gorm.services.Service` and declare a method with the same signature.
+Create an interface annotated with `import grails.gorm.services.Service` and declare a method with the same signature.
 
 [source, groovy]
 .grails-app/services/example/grails/PersonDataService.groovy
