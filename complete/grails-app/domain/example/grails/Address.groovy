@@ -7,4 +7,7 @@ class Address {
     String streetName
     String city
     String state
+    String country
+
+    static belongsTo = [person: Person]
 }

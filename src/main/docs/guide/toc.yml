@@ -11,14 +11,13 @@ whyGormDataServices:
   title: Why GORM Data Services
 usingGormDataServices:
   title: Using GORM Data Services
-  dynamicFinders: Dynamic Finders
+  dynamicFinders: Dynamic Finders Like
+  unitTest: Unit Test
+  propertyProjection: Property Projection
   saveOperation: Save Operation
   joinQuery: Join Query
-abstractClassSupport:
-  title: Abstract Class Support
-  hqlQuery: HQL Query
-runningTheApp:
-    title: Running the Application
+japqlQuery:
+  title: JPA-QL Query
 conclusion: Conclusion
 helpWithGrails:
     title: Help with Grails

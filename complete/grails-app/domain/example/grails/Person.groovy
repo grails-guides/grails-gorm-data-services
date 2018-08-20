@@ -7,7 +7,7 @@ class Person {
 
     String name
     Integer age
-    List<Address> addresses
+    Set<Address> addresses // <1>
 
     static hasMany = [addresses: Address]
 }

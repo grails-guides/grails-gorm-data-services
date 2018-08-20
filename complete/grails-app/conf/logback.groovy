@@ -33,6 +33,8 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
+root(ERROR, ['STDOUT'])
 // tag::hqlLogger[]
-logger 'org.hibernate.SQL', TRACE, ['STDOUT']
+logger 'org.hibernate.SQL', TRACE, ['STDOUT'], false
 // end::hqlLogger[]
+logger 'example.grails', INFO, ['STDOUT'], false

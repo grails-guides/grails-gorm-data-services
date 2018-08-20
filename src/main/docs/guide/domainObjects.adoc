@@ -1,4 +1,4 @@
-Create the `Person` and `Address` domain classes.
+Create the `Person` and `Address` domain classes. They have a one-to-many relationship.
 
 [source, groovy]
 .grails-app/domain/example/grails/Person.groovy
@@ -6,30 +6,11 @@ Create the `Person` and `Address` domain classes.
 include::{sourceDir}/grails-app/domain/example/grails/Person.groovy[]
 ----
 
+<1> You normally don't need to specify default type `java.util.Set` in a `hasMany` association. However,
+we query the association in a JPA-QL query later in this tutorial and thus we need to be explicit here.
+
 [source, groovy]
 .grails-app/domain/example/grails/Address.groovy
 ----
 include::{sourceDir}/grails-app/domain/example/grails/Address.groovy[]
 ----
-
-Add to the `BootStrap.groovy` to insert sample data into the H2 in-memory databases. We will insert a few people with multiple addresses.
-
-[source, groovy]
-.grails-app/init/example/grails/BootStrap.groovy
-----
-include::{sourceDir}/grails-app/init/example/grails/BootStrap.groovy[]
-----
-
-In order to observe how Data Service operations translate into SQL statements, we will adjust the logger configuration. Also
-notice that we have placed `println` statements in `BootStrap.groovy` to differentiate the log output.
-
-In the `logback.groovy` remove the line `root(ERROR, ['STDOUT'])` and replace it with below:
-
-[source, groovy]
-.grails-app/conf/logback.groovy
-----
-include::{sourceDir}/grails-app/conf/logback.groovy[tag=hqlLogger]
-----
-
-CAUTION: Verify that the `BootStrap.groovy` and domain classes work correctly by running `gradlew bootRun`. Then go to `localhost:8080/dbconsole`
-and check the H2 database UI to see rows inserted.
