@@ -53,6 +53,8 @@ Create an integration test:
 include::{sourceDir}/src/integration-test/groovy/example/grails/PersonDataServiceIntSpec.groovy[tag=clazz]
 
 include::{sourceDir}/src/integration-test/groovy/example/grails/PersonDataServiceIntSpec.groovy[tag=findEagerly]
+
+}
 ----
 
 <1> Place your integration tests in `src/integration-test` and annotate them with `grails.testing.mixin.integration.Integration`.
