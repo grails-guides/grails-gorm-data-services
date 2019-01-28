@@ -1,6 +1,5 @@
 package example.grails
 
-import grails.transaction.Rollback
 import grails.util.Environment
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
