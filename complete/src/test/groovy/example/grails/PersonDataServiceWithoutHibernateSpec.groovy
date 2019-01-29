@@ -30,7 +30,7 @@ class PersonDataServiceWithoutHibernateSpec extends Specification {
         personDataService = this.hibernateDatastore.getService(PersonDataService)
     }
 
-    @Rollback // <5>
+    @Rollback // <6>
     void "test find person by name"() {
         given:
         Person p = personDataService.save("Nirav", 39)
@@ -43,7 +43,7 @@ class PersonDataServiceWithoutHibernateSpec extends Specification {
         person.age == 39
 
         cleanup:
-        personDataService.delete(p.id) // <6>
+        personDataService.delete(p.id)
     }
     //end::classContent[]
 }

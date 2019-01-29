@@ -19,7 +19,6 @@ include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceWithoutHibe
 <4> Within the `setupSpec` method a new HibernateDatastore is constructed with the domain classes to use as the argument to the constructor.
 <5> In general you have to wrap your test execution logic in a session or transaction. You can obtain the PlatformTransactionManager from the HibernateDatastore.
 <6> Typically you want to annotate your feature methods with the Rollback annotation which is used to rollback any changes made within each test.
-<7> Cleanup the person created during the test.
 
 Luckily, http://plugins.grails.org/plugin/grails/hibernate5[Grails Hibernate Plugin] includes a utility class `grails.test.hibernate.HibernateSpec` which you could extend from and simplify
 the previous unit test:
