@@ -1,5 +1,8 @@
 //tag::packagedeclaration[]
 package example.grails
+
+import grails.gorm.transactions.Transactional
+
 //end::packagedeclaration[]
 
 //tag::imports[]
@@ -11,9 +14,10 @@ import spock.lang.Shared
 import spock.lang.Specification
 //end::imports[]
 
+//tag::classContent[]
+@Transactional
 class PersonDataServiceWithoutHibernateSpec extends Specification {
 
-    //tag::classContent[]
     @Shared // <2>
     PersonDataService personDataService
 
@@ -33,7 +37,7 @@ class PersonDataServiceWithoutHibernateSpec extends Specification {
     @Rollback // <6>
     void "test find person by name"() {
         given:
-        Person p = personDataService.save("Nirav", 39)
+        Person p = new Person(name: "Nirav", age: 39).save()
 
         when:
         Person person = personDataService.findByName("Nirav")
@@ -41,9 +45,6 @@ class PersonDataServiceWithoutHibernateSpec extends Specification {
         then:
         person.name == "Nirav"
         person.age == 39
-
-        cleanup:
-        personDataService.delete(p.id)
     }
     //end::classContent[]
 }

@@ -15,7 +15,7 @@ class PersonDataServiceSpec extends HibernateSpec {
 
     void "test find person by name"() {
         given:
-        personDataService.save("Nirav", 39)
+        new Person(name: "Nirav", age: 39).save(flush: true)
 
         when:
         Person person = personDataService.findByName("Nirav")
@@ -32,7 +32,7 @@ class PersonDataServiceSpec extends HibernateSpec {
     // tag::test1[]
     void "test find persons age projection"() {
         given:
-        Person person = personDataService.save("Nirav", 39)
+        Person person = new Person(name: "Nirav", age: 39).save(flush: true)
 
         when:
         Integer age = personDataService.findPersonAge("Nirav")

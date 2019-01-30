@@ -7,8 +7,6 @@ include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceWithoutHibe
 
 include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceWithoutHibernateSpec.groovy[tag=imports]
 
-class PersonDataServiceSpec extends Specification { // <1>
-
 include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceWithoutHibernateSpec.groovy[tag=classContent]
 }
 ----

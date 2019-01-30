@@ -3,7 +3,7 @@ Data Services can perform write operations as well.
 [source, groovy]
 .grails-app/services/example/grails/PersonDataService.groovy
 ----
-include::{sourceDir}/grails-app/services/example/grails/PersonDataService.groovy[tag=savePerson, indent=false]
+include::{sourceDir}/grails-app/services/example/grails/PersonDataService.groovy[tag=save, indent=false]
 ----
 
 Add to the unit test to verify correctness.
