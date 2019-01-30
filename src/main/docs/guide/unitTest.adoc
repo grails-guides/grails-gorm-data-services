@@ -1,7 +1,7 @@
 You could write a unit test for the previous Data Service as follows:
 
 [source, groovy]
-.src/test/groovy/example/grails/PersonDataServiceSpec.groovy
+.src/test/groovy/example/grails/PersonDataServiceWithoutHibernateSpec.groovy
 ----
 include::{sourceDir}/src/test/groovy/example/grails/PersonDataServiceWithoutHibernateSpec.groovy[tag=packagedeclaration]
 
